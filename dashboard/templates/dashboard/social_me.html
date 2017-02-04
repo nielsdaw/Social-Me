@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Social Me{% endblock %}
+
+{% block css %}
+    <!-- Leaflet stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+{% endblock %}
+
+
+{%block content%}
+
+    <div class="row">
+        <div class="text-center">
+            <h1 class="header">
+                Your Social Me
+            </h1>
+        </div>
+    </div>
+
+        <!-- first level rows -->
+        <div class="row p-t-4">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 passport passport-height well well-md" id="passport">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 p-t-2" >
+                        <div class="text-center p-b-1 ">
+                            <strong>
+                                Digitalt Pas<br>
+                                Digital Passport<br>
+                                Passeport Digitale
+                            </strong>
+                        </div>
+                            <img src="{{ social.facebook.profile_picture_url }}" alt="profile-picture" class="center-block img-rounded passport-img">
+                        <div class="text-center">
+                            <p>
+                                Passport number.:<br>
+                                <span><strong>202020359</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-xs-12 p-t-5">
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Last Name:<br>
+                                    <span class="lead"><strong>{{ social.facebook.last_name }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
+                               <p>
+                                    First Name:<br>
+                                    <span class="lead"><strong>{{social.facebook.first_name}}</strong></span>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Hometown:<br>
+                                    <span class="lead" id="elem_city"><strong>{{ social.facebook.hometown }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Gender/Sex:<br>
+                                     <span class="lead"><strong>{{ social.facebook.gender }}</strong></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Date of birth:<br>
+                                    <span class="lead"><strong>{{ social.facebook.birthday }}</strong></span>
+                                </p>
+
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Current city.:<br>
+                                    {% if social.linkedin  %}
+                                        <span class="lead"><strong>{{ social.linkedin.location }}</strong></span>
+                                    {% else %}
+                                        <span class="lead"><strong>{{ social.facebook.current_city }}</strong></span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Date of issue:<br>
+                                    <span class="lead"><strong>{{ date }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Date of expiry:<br>
+                                    <span class="lead"><strong>Nov 12 3017</strong></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Civil status:<br>
+                                    <span class="lead"><strong>{{ social.facebook.relationship }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
+                                <p>
+                                    Current devices:
+                                    <span class="lead"><strong>{{ social.facebook.devices }}</strong></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 passport-text col-xs-12 word-wrapper">
+                                <p>
+                                    Email:<br>
+                                    {% if social.linkedin  %}
+                                        <span class="lead"><strong>{{ social.linkedin.email }}</strong></span>
+                                    {% else %}
+                                        <span class="lead"><strong>{{ social.facebook.facebook_email }}</strong></span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- second rows -->
+    <div class="row p-t-5">
+        <div class="col-md-6">
+            <div class="text-center">
+                <h3>
+                    Your education and work experience
+                </h3>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="profile-well well well-md">
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ facebook_education.1 }}" alt="" class="img-rounded img-responsive pull-left">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                <b>You have studied here:</b> <i>{{ facebook_education.0 }}</i>
+                              </p>
+                            </div>
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ facebook_work.1 }}" alt="" class="img-rounded img-responsive pull-left">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                  <i class="fa fa-suitcase" aria-hidden="true"></i>
+                                  <b>You have worked here:</b><br> <i>{{ facebook_work.0 }}</i>
+                              </p>
+                            </div>
+                        </div>
+                      {% if social.linkedin  %}
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ linkedin_img.0 }}" alt="" class="img-rounded img-responsive pull-left">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-certificate" aria-hidden="true"></i>
+                                <b>You are:</b><br> <i>{{ social.linkedin.headline }}</i>
+                              </p>
+                            </div>
+
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ social.linkedin.profile_picture_url }}" alt="" class="img-rounded pull-left img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-industry" aria-hidden="true"></i>
+                                <b>You are looking for positions within the industry of</b> <i>{{ social.linkedin.industry }}</i>
+                              </p>
+                            </div>
+                        </div>
+                      {% endif %}
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="text-center">
+                <h3>
+                    Some of your preferences
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="profile-well well well-md">
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ facebook_bars.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-glass" aria-hidden="true"></i>
+                                    <b>You like going out in some of these places:</b>
+                                    <i>{{ facebook_bars.0.0 }}</i>, <i>{{ facebook_bars.1.0 }}</i>, <i>{{ facebook_bars.2.0 }}</i>, <i>{{ facebook_bars.3.0 }}</i>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ facebook_cafes.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <b>Some of your preferred cafes and restaurants are:</b>
+                                    <i>{{ facebook_cafes.0.0 }}, </i>{{ facebook_cafes.1.0 }}, <i>{{ facebook_cafes.2.0 }}</i>, <i>{{ facebook_cafes.4.0 }}</i>
+                                </p>
+                            </div>
+                        </div>
+                        {% if social.spotify %}
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ spotify_data.1.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                                    <b>You like listening to:</b>
+                                    {% for item in spotify_data.1 %}
+                                        '<i>{{ item.0 }}'</i>,
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ spotify_data.0.0.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-music" aria-hidden="true"></i>
+                                    <b>Some of your favourite artists are:</b>
+                                    {% for item in spotify_data.0 %}
+                                        <i>{{ item.0 }}</i>,
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- third level rows - Leaflet map -->
+    <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+
+                <div class="text-center">
+                    <h3>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        Places you've been (or would like to go)
+                    </h3>
+                    <p>
+                        Based on your likes, events and tags
+                    </p>
+                </div>
+                <div id="social-map">
+                    <div id="mapid"></div>
+                </div>
+            </div>
+     </div>
+
+
+    <!-- Last level - suggestion of more connections -->
+    {% if request.session.social_media|length < 4 %}
+        <div class="row p-t-4 p-b-3">
+            <div class="col-md-4 col-xs-10 col-xs-offset-1 col-md-offset-4 well profile-well">
+                <div class="text-center">
+                    <p class="lead">
+                        <small>Do you wish to include more social network profiles?</small>
+                    </p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+                    <a href="{% url 'connect' %}" class="btn btn-block btn-sm btn-primary btn-more-info">
+                        <i class="fa fa-connectdevelop" aria-hidden="true"></i>
+                        Connect more profiles
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascript %}
+
+    <!-- Leaflet javascript -->
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <!-- Leaflet Sleep javascript -->
+    <script src="{% static 'js/Leaflet.Sleep.js' %}"></script>
+    <!-- Custom javascript -->
+    <script src="{% static 'js/social-me-map.js' %}"></script>
+
+    <!-- Hotfix for locations -->
+    <script type="text/javascript">
+        data1 = {{ instagram_locations|safe }};
+        data2 = {{ facebook_locations|safe }};
+        data3 = {{ facebook_locations_2|safe }}
+        data4 = {{ facebook_locations_3|safe }}
+        $(document).ready(function() {
+            setAllMarkers(data1, data2, data3, data4);
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Social Me{% endblock %}
+
+{%block content%}
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-offset-3 ">
+            <div class="text-center">
+                <h1 class="header">Social Me</h1>
+                <p class="p-t-2 lead">
+                    <b>What?</b><br>
+                    This site provides a free service, where you can view some of the information you provide to social medias.
+                </p>
+                <p class="lead">
+                    <b>How?</b><br>
+                    Choose the social media profiles you want to connect to the service.
+                    The service will then retrieve your information from the chosen social media(s) and create a temporary Social Me.<br>
+                </p>
+                <p class="lead">
+                    <b>Why?</b><br>
+                    The main purpose of the project is to develop a service available for everyone,
+                    to create a simple overview of which information we put on different platforms.
+                    <br>
+                </p>
+                <p class="lead">
+                    <b>What happens to my information?</b><br>
+                    <u>None</u> of your information from social medias is stored. The information you provide is used to create a temporary 'Social Me', which only you can see<br><br>
+                    <a href="{% url 'privacy_policy' %}">Read more about our Privacy Policy / Terms Of Use here</a>
+                </p>
+
+                <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 p-t-2">
+                    <a href="{% url 'auth:login' %}" class="btn btn-block btn-md btn-primary">
+                      <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Continue to log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

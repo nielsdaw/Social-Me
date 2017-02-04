@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block title %}Connect your profiles{% endblock %}
+{% block css %}
+    <!-- Bootstrap tour -->
+    <link href="{% static 'css/bootstrap-tour.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{%block content%}
+
+
+
+     <div class="row">
+            {% if messages %}
+                <div class="col-md-6 col-md-offset-3 p-t-2">
+                    <div class="alert alert-info">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                      <strong><i class="fa fa-info-circle" aria-hidden="true"></i></strong>
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="text-center">
+                        <h1>Hi there {{request.session.social_media.facebook.first_name }}</h1>
+                        <p class="lead">
+                            Connect your desired social media profiles below:
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        <div id="connect-profiles" class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
+
+            <!-- Facebook -->
+            <div class="row p-t-1">
+                <div >
+                    <div class="no-hover-facebook">
+                        <a class="btn btn-block btn-social btn-md btn-facebook">
+                            <span class="fa fa-facebook" ></span>
+                            <span class="success-color">Successfuly Connected</span>
+                            <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="row p-t-1">
+                <div>
+                    {% if request.session.social_media.instagram %}
+                        <div class="no-hover-instagram">
+                            <a class="btn btn-block btn-social btn-md btn-instagram">
+                                <span class="fa fa-instagram"></span>
+                                <span class="success-color">Successfuly Connected</span>
+                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    {% else %}
+                           <a href="{% url 'social:begin' 'instagram' %}" class="btn btn-block btn-social btn-md btn-instagram">
+                                <span class="fa fa-instagram"></span>
+                                Connect Instagram
+                            </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- LinkedIN -->
+            <div class="row p-t-1">
+                <div>
+                    {% if request.session.social_media.linkedin %}
+                        <div class="no-hover-linkedin">
+                            <a class="btn btn-block btn-social btn-md btn-linkedin">
+                                <span class="fa fa-linkedin"></span>
+                                <span class="success-color">Successfuly Connected</span>
+                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    {% else %}
+                    <a href="{% url 'social:begin' 'linkedin' %}" class="btn btn-block btn-social btn-md btn-linkedin">
+                        <span class="fa fa-linkedin"></span>
+                        Connect LinkedIn
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Spotify -->
+            <div class="row p-t-1 p-b-3">
+                <div>
+                    {% if request.session.social_media.spotify %}
+                        <div class="no-hover-spotify">
+                            <a class="btn btn-block btn-social btn-md spotify-button btn">
+                                <span class="fa fa-spotify"></span>
+                                Successfuly Connected
+                                <i class="fa fa-check-square" id="check_white" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    {% else %}
+                    <a href="{% url 'social:begin' 'spotify' %}" class="btn btn-block btn-social btn-md btn-linkedin spotify-button">
+                        <span class="fa fa-spotify"></span>
+                        Connect Spotify
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+         </div>
+
+            <!-- Social Me Buton -->
+            <div class="row p-t-5">
+                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4" id="social-me">
+                    <a href="{% url 'dashboard:social_me' %}" class="btn btn-block btn-lg btn-primary btn-more-info social-me">
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                        Go to Social Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard button -->
+            <div class="row p-t-1">
+                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4" id="dashboard">
+                    <a href="{% url 'dashboard:main' %}" class="btn btn-block btn-lg btn-primary btn-more-info" >
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        Go to dashboard of profiles
+                    </a>
+                </div>
+            </div>
+
+    </div>
+
+    {% block javascript %}
+        <!-- Social me Tour js -->
+        <script src="{% static 'js/bootstrap-tour.min.js' %}"></script>
+        <script src="{% static 'js/walk-through.js' %}"></script>
+    {% endblock %}
+{%endblock%}

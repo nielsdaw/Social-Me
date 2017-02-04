@@ -1,0 +1,387 @@
+
+@media (min-width: 1035px) {
+
+    body{
+        background: url("../img/background/Elegant_Background-2.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+
+    .passport{
+        background: url("../img/passport1.jpeg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        opacity: 0.6;
+        border-radius: 15px;
+    }
+
+    .passport-img{
+        height: 250px;
+        opacity: 0.9;
+        filter: grayscale(100%);
+    }
+
+    .img-two{
+        height: 200px;
+        width: 200px;
+    }
+
+    .img-two img{
+        height: 150px;
+        width: 150px ;
+    }
+
+}
+
+@media (max-width: 1034px) {
+
+    body{
+        background: url("../img/background/Elegant_Background-mobile.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+
+    .passport{
+        background: url("../img/passport1.jpeg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        overflow-y: auto;
+        opacity: 0.6;
+        border-radius: 15px;
+    }
+
+    .passport-img{
+        height: 180px;
+        opacity: 0.9;
+        filter: grayscale(100%);
+    }
+
+    .img-two{
+        width: 120px;
+        height:150px;
+    }
+
+    #menu-space{
+        padding-bottom: 2em;
+    }
+
+}
+
+.passport-text .lead{
+    color: black;
+    opacity: 1;
+}
+
+.barcode{
+
+}
+
+.social-div {
+    height: 200px;
+}
+
+.over img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 135px;
+}
+
+
+.img-four img{
+    height: 100px;
+    width: 100px;
+}
+
+.menu-bar{
+    height: 40px;
+    position: fixed;
+    z-index:1;
+}
+
+.menu-bar-color{
+    background-color: #286090;
+    background-color: rgba(40, 96, 144, 0.8);
+    border: #204d74;
+    color: snow;
+}
+
+.menu-bar-color:hover{
+    background-color: snow;
+    background-color: snow;
+    border: #000000;
+    color: #000000;
+
+}
+
+.header{
+    font-size:6rem;
+}
+
+/*.disable-hover{*/
+    /*background-color: transparent;*/
+/*}*/
+
+.m-t-1{
+    padding-top: 1rem;
+}
+
+.m-t-2{
+    padding-top: 2rem;
+}
+
+.m-t-3{
+    padding-top: 3rem;
+}
+
+.m-t-4{
+    padding-top: 4rem;
+}
+
+.m-t-5{
+    padding-top: 5rem;
+}
+
+.m-r-1{
+    padding-right: 1rem;
+}
+
+.m-l-2{
+    padding-right: 2rem;
+}
+
+.m-l-3{
+    padding-right: 3rem;
+}
+
+.m-b-1{
+    padding-bottom: 1rem;
+}
+
+.m-b-2{
+    padding-bottom: 2rem;
+}
+
+.m-b-3{
+    padding-bottom: 3rem;
+}
+
+.m-l-1{
+    padding-left: 1rem;
+}
+
+.m-l-2{
+    padding-left: 2rem;
+}
+
+.m-l-3{
+    padding-left: 3rem;
+}
+
+.p-t-1{
+    padding-top: 1rem;
+}
+
+.p-t-2{
+    padding-top: 2rem;
+}
+
+.p-t-3{
+    padding-top: 3rem;
+}
+
+.p-t-4{
+    padding-top: 4rem;
+}
+
+.p-t-5{
+    padding-top: 5rem;
+}
+
+.p-r-1{
+    padding-right: 1rem;
+}
+
+.p-l-2{
+    padding-right: 2rem;
+}
+
+.p-l-3{
+    padding-right: 3rem;
+}
+
+.p-b-1{
+    padding-bottom: 1rem;
+}
+
+.p-b-2{
+    padding-bottom: 2rem;
+}
+
+.p-b-3{
+    padding-bottom: 3rem;
+}
+
+.p-l-1{
+    padding-left: 1rem;
+}
+
+.p-l-2{
+    padding-left: 2rem;
+}
+
+.p-l-3{
+    padding-left: 3rem;
+}
+
+
+/* Green check icon */
+#check_green {
+    color: #5fba7d;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
+.success-color{
+    color: rgba(40, 189, 47, 1);
+}
+
+/* Green check icon */
+#check_white {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
+/* white signout button */
+#signout-white{
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
+.sign-out-red{
+    color: #d43f3a;
+}
+
+.connect-green{
+    color: #0d6aad;
+}
+
+
+/* No hover effect on fb element */
+.no-hover-facebook a:hover {
+    background-color: #3b5998;
+    border-color:transparent;
+    cursor: default;
+}
+
+/* No hover effect on instagram */
+.no-hover-instagram a:hover {
+    background-color: #3f729b;
+    border-color:transparent;
+    cursor: default;
+}
+
+/* No hover effect on linkedIn */
+.no-hover-linkedin a:hover {
+    background-color: #007bb6;
+    border-color:transparent;
+    cursor: default;
+}
+
+.profile-well{
+    background-color: #92f0cf66;
+    background-color: rgba(146, 240, 207, 0.1);
+    color: #000000;
+    border: 1px solid rgba(0, 0,0, 0.3);
+}
+
+.profile-img{
+    height: 168px;
+    width: 168px;
+}
+
+.profile-img-detail{
+    height: 240px;
+    width: 240px;
+}
+
+.nav-button{
+    background-color: #92f0cfb3;
+    border: 1px #92f0cfb3;
+    position: fixed;
+}
+
+.btn-more-info{
+    background-color: #35809e;
+    background-color: rgba(53,128,158, 1);
+    border-color: rgba(53,128,158, 1);
+}
+
+.facebook-color{
+    color: #4267b2;
+    color: rgba(66, 103, 178,1);
+}
+
+.linkedin-color{
+    color: #006fa6;
+    color: 	rgba(0, 111, 166,1);
+}
+
+.spotify-color{
+    color: #2ebd59;
+    color: rgba(46, 189, 89, 1);
+}
+
+.spotify-button{
+    color: #fff;
+    background-color: rgba(46, 189, 89, 1);
+    background-color: #2ebd59;
+}
+
+.spotify-button:hover{
+    color: #fff;
+    background-color: #227d3d;
+}
+
+#mapid {
+    height: 470px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0,0, 0.3);
+}
+
+#logo-nav{
+    height:30px;
+    width: 60px;
+}
+
+.tooltip{
+    border: 1px solid red;
+}
+
+.center-loader{
+    width: 50%;
+    margin: 0 auto;
+    height:150px;
+    text-align: center;
+}
+
+.word-wrapper{
+    word-wrap: break-word;
+}
+
